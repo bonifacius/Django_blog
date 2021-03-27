@@ -2,15 +2,15 @@
 
 Клонируем репозиторий: git clone
 
-Переходим в папку с проектом который хотим запустить Создаем виртуальное окружение: python -m venv test-django
+-Переходим в папку с проектом который хотим запустить Создаем виртуальное окружение: python -m venv test-django
 
-Активируем окружение: source test-django/bin/activate
+-Активируем окружение: source test-django/bin/activate
 
-Устанавливаем необходимые пакеты: pip install -r requirements.txt
+-Устанавливаем необходимые пакеты: pip install -r requirements.txt
 
-Делаем миграцию БД: python manage.py migrate
+-Делаем миграцию БД: python manage.py migrate
 
-Запускаем: python manage.py runserver
+-Запускаем: python manage.py runserver
 
 ************************************************************************
 ##Общий вид сайта:
