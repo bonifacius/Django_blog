@@ -19,30 +19,35 @@
 
 1. Создание статьи через админ панель.
 2. Контакты
+   
+
     -Возможность получать Feedback от посетителей сайта на свой email
+
    -Для gmail:
+
         -Зайдите в свою почту и перейдите в "Управление google аккаунтом"
+
         -Кликните на вкладку безопасность
+
         -Обязательно подключите двухфакторную аутентификацию
+
         -Подтвердите паролем, что вы владелец аккаунта
+
         -Выберите приложение и устройство, для которых нужно создать пароль приложения. Из раскрывающегося списка выберите "Другое"
+
         -Затем вы получите пароль. Сохраните его пока куда-нибудь
+
 
 
    -Нужно в settings.py в конце добавить:
    
-[comment]: <> (    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend')
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = 'Ваша почта'
+    EMAIL_HOST_PASSWORD = 'Пароль который вы только что получили'
 
-[comment]: <> (    EMAIL_HOST = 'smtp.gmail.com')
-
-[comment]: <> (    EMAIL_USE_TLS = True)
-
-[comment]: <> (    EMAIL_PORT = 587)
-
-[comment]: <> (    EMAIL_HOST_USER = 'Ваша почта')
-
-[comment]: <> (    EMAIL_HOST_PASSWORD = 'Пароль который вы только что получили')
-   
     И в views.py добавить email в методе post класса FeedBackView(View):
     #send_mail(f'От {name} | {subject}', message, from_email, ['need put email'])
    
